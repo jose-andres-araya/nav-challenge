@@ -1,0 +1,16 @@
+/**
+ * Page
+ */
+
+.page-content {
+  max-width: $content-max-width;
+  padding: 60px 30px;
+
+  @include bp-medium {
+    padding: 120px 20px;
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+}

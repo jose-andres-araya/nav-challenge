@@ -1,0 +1,22 @@
+/**
+ * Colors
+ *
+ * For colors that are not easily named, lets use https://chir.ag/projects/name-that-color/
+ */
+
+/* Primary Colors */
+$black: #000;
+$white: #fff;
+
+
+/* Secondary Colors */
+$astronaut: #244e71; // Nav - Dark blue
+$glacier: #779ec4; // Nav - Light blue
+$steel-blue: #5084b4; // Nav - Blue
+
+/* Utils */
+$transparent: rgba(0, 0, 0, 0);
+$white-transparent: rgba(255, 255, 255, 0);
+$white-full-opacity: rgba(255, 255, 255, 1);
+$black-semi-transparent: rgba(0, 0 , 0, .5);
+$black-full-opacity: rgba(0, 0 , 0, 1);

@@ -1,0 +1,13 @@
+/**
+ * Page Hero
+ */
+
+.page-hero {
+  &__title {
+    font-size: calculate-rem(25);
+
+    @include bp-medium {
+      font-size: calculate-rem(50);
+    }
+  }
+}
