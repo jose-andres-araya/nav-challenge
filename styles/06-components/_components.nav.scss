@@ -1,0 +1,25 @@
+/**
+ * Nav
+ */
+
+.nav {
+  @extend %flexbox;
+  @include align-items(center);
+  @include justify-content(flex-start);
+  height: 50px;
+  padding: 10px;
+  background: $black;
+  color: $white;
+
+  &__items {
+    @extend %flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  &__item-link {
+    margin: 5px 15px;
+    font-size: calculate-rem(30);
+    text-transform: uppercase;
+  }
+}
