@@ -2,6 +2,8 @@
  * Utils
  */
 
+@use "sass:math";
+
 /* Transitions */
 @mixin transition($args...) {
   -webkit-transition: $args;
