@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-@use "sass:math";
 
 /*
 
@@ -25,6 +24,4 @@ b Y88b Y "8" 888  Y8b Y8P    C8888     888 88b "8" 888 888 888 d88 88b 888 88b d
 
 @import '05-vendor/main';
 
-@import '06-components/main';
-
-@import '07-trumps/main';
+@import '06-trumps/main';
