@@ -1,12 +1,10 @@
 <template>
   <div class="page-content">
-    <div>
-      <hero
-        title="Page Not Found"
+    <hero
+      title="Page Not Found"
         description="<p>Page you're looking for doesn't exist anymore.</p><a href='/'>Go back to the homepage.</a>"
-        >
-      </hero>
-    </div>
+      >
+    </hero>
   </div>
 </template>
 
