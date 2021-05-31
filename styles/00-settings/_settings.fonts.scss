@@ -5,11 +5,13 @@
 $default-font-size: 12;
 
 /* Virtual Fonts */
-// Using Open Sans as a replacement for AS Circular, Helvetica Neue (the fonts that Alaska Airlines uses in their nav)
+// Using Open Sans as a replacement for AS Circular, Helvetica Neue
 $open-sans: 'Open Sans';
 
 $open-sans-family: $open-sans, sans-serif;
 
+$open-sans-regular: 400;
+$open-sans-bold: 700;
 
 /* Physical Fonts */
 //$font-bold: 'Font-Bold';
