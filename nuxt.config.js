@@ -19,6 +19,9 @@ export default {
     ]
   },
 
+  // Pages Directory: https://nuxtjs.org/docs/2.x/directory-structure/pages/
+  scrollToTop: true,
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources'

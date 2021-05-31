@@ -4,8 +4,8 @@
     - Component Usage -
     -------------------
     <hero
-        title: "hero title" => required
-        description: "hero description" => optional
+      title: "hero title" => required
+      description: "hero description" => optional
       >
     </hero>
   -->
@@ -15,22 +15,19 @@
       v-if="description"
       class="hero__description"
       v-html="description"
-    >
+      >
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     title: {
       type: String,
       required: true
     },
-    description: {
-      type: String
-    }
+    description: String
   }
 }
 </script>

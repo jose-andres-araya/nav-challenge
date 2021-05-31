@@ -1,0 +1,81 @@
+/**
+ * Hamburger Menu
+ */
+
+.hamburger-menu {
+  @include transition(all .2s);
+
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: $transparent;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 150%;
+    width: 150%;
+    top: -25%;
+    left: -25%;
+  }
+
+  &__lines {
+    top: 50%;
+    background-color: $white;
+
+    &,
+    &:after,
+    &:before {
+      @include transform(rotate(0));
+      @include transition(.2s top .2s, .1s left, .2s transform, .4s background-color .2s);
+
+      content: '';
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 100%;
+      border-radius: 3px;
+      background-color: $white;
+    }
+
+    &:after,
+    &:before {
+      width: 30px;
+    }
+
+    &:after {
+      top: -12px;
+    }
+
+    &:before {
+      top: 12px;
+    }
+
+    .hamburger-menu--open & {
+      & {
+        background-color: $transparent;
+      }
+
+      &,
+      &:after,
+      &:before {
+        @include transition(.2s background-color, .2s top, .2s left, .2s transform .15s);
+      }
+
+      &:before,
+      &:after {
+        top: 0px;
+      }
+
+      &:before {
+        @include transform(rotate(-45deg));
+      }
+
+      &:after {
+        @include transform(rotate(45deg));
+      }
+    }
+  }
+}
