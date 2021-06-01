@@ -199,6 +199,7 @@ export default {
       &--title {
         background: $glacier;
         padding: 0 20px 0 15px;
+        border-bottom: 1px solid $glacier;
 
         @include bp-medium {
           display: none;
@@ -211,7 +212,7 @@ export default {
       }
 
       &-close {
-        z-index: 2;
+        z-index: 3;
         cursor: pointer;
         background-color: $transparent;
       }
@@ -324,7 +325,7 @@ export default {
       @include transform(translateX(100%));
       @include transition(transform .3s cubic-bezier(.5, 1, .5, 1));
 
-      z-index: 1;
+      z-index: 2;
       position: absolute;
       top: 0;
       right: 0;
@@ -369,7 +370,7 @@ export default {
         width: 100%;
 
         @include bp-medium {
-          z-index: 2;
+          z-index: 3;
           background-color: $glacier;
         }
 

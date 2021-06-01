@@ -153,8 +153,6 @@ export const getters = {
   routes: state => state.routes
 }
 
-// Global Actions
 export const actions = {}
 
-// Global Mutations
 export const mutations = {}

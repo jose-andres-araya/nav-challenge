@@ -1,4 +1,5 @@
-<template>  <div>
+<template>
+  <div>
     <Nav />
     <div class="page-content"
       @click="toggleMenu(false)"
