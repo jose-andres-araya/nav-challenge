@@ -15,7 +15,10 @@
           class="nav__logo-image"
           src="@/assets/white-logo.png" />
       </nuxt-link>
-      <ul class="nav__items">
+      <ul
+        class="nav__items"
+        :class="{'nav__items--open': isMenuOpened}"
+        >
         <nav-item
           v-for="route in routes"
           :key="route.path"
@@ -25,9 +28,9 @@
         </nav-item>
       </ul>
       <button
-        @click="toggleMenu"
+        @click="toggleMenu(!isMenuOpened)"
         class="nav__menu hamburger-menu"
-        :class="{'hamburger-menu--open': this.openMenu}"
+        :class="{'hamburger-menu--open': isMenuOpened}"
         >
         <span class="hamburger-menu__lines"></span>
       </button>
@@ -36,30 +39,23 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import NavItem from './NavItem.vue'
 
 export default {
   components: {
     NavItem
   },
-  /*mounted() {
-    console.log(this.$router.getRoutes())
-  }*/
   computed: {
     ...mapGetters({
-      routes: 'routes/routes'
+      routes: 'routes/routes',
+      isMenuOpened: 'navigation/isMenuOpened'
     })
   },
-  data() {
-    return {
-      openMenu: false
-    }
-  },
   methods: {
-    toggleMenu() {
-      this.openMenu = !this.openMenu;
-    }
+    ...mapActions({
+      toggleMenu: 'navigation/toggleMenu'
+    })
   }
 }
 </script>
@@ -75,8 +71,9 @@ export default {
       @include align-items(center);
       @include box-sizing(border-box);
 
+      position: relative;
       max-width: $page-max-width;
-      padding: 10px 30px;
+      padding: 10px 15px 10px 30px;
       margin: 0 auto;
     }
 
@@ -97,10 +94,33 @@ export default {
     }
 
     &__items {
-      display: none;
+      @include flexbox;
+      @include flex-direction(column);
+      @include transform(translateX(-100%));
+      @include transition(transform .3s cubic-bezier(.5, 1, .5, 1));
+      @include box-sizing(border-box);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      height: calc(100vh - 75px);
+      width: 100%;
+      margin-top: 75px;
+      background-color: $steel-blue;
 
       @include bp-medium {
         @include flexbox;
+
+        position: initial;
+        height: auto;
+        width: auto;
+        margin-top: 0;
+        background-color: $transparent;
+      }
+
+      &--open {
+        @include transform(translateX(0));
       }
     }
 
