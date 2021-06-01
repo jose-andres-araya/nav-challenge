@@ -105,10 +105,11 @@ export default {
       @include transition(transform .3s cubic-bezier(.5, 1, .5, 1));
       @include box-sizing(border-box);
 
+      z-index: 1;
       position: absolute;
       top: 0;
       left: 0;
-      overflow-y: auto;
+      overflow: hidden;
       height: calc(100vh - 75px);
       width: 100%;
       margin-top: 75px;
@@ -119,7 +120,7 @@ export default {
         @include transform(none);
 
         position: initial;
-        overflow-y: unset;
+        overflow: unset;
         height: auto;
         width: auto;
         margin-top: 0;
