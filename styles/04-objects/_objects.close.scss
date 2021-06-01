@@ -1,0 +1,28 @@
+/**
+ * Close
+ */
+
+.close {
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 20px;
+    width: 2px;
+    background-color: $white;
+  }
+
+  &:before {
+    @include transform(rotate(45deg));
+  }
+
+  &:after {
+    @include transform(rotate(-45deg));
+  }
+}

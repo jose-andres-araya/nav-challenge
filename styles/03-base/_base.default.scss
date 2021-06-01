@@ -32,9 +32,10 @@ h1::selection,
 h2::selection,
 h3::selection,
 h4::selection,
+li::selection,
 p::selection,
-li::selection {
-  background-color: $black;
+a::selection {
+  background-color: $glacier;
   color: $white;
 }
 

@@ -14,16 +14,15 @@
   }
 
   &-content {
+    @include box-sizing(border-box);
+
+    height: calc(100vh - 75px);
     max-width: $content-max-width;
     padding: 40px 20px;
     margin: 0 auto;
 
     @include bp-medium {
       padding: 60px 30px;
-    }
-
-    &--disabled {
-      pointer-events: none;
     }
   }
 }

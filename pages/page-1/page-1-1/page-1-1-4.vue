@@ -1,10 +1,8 @@
 <template>
-  <div class="page-content">
-    <hero
-      title="Page 1 | SubPage 1 | SubPage 1.4"
-      >
-    </hero>
-  </div>
+  <hero
+    title="Page 1 | SubPage 1 | SubPage 1.4"
+    >
+  </hero>
 </template>
 
 <script>
