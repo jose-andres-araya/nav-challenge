@@ -75,6 +75,11 @@ export default {
       max-width: $page-max-width;
       padding: 10px 15px 10px 30px;
       margin: 0 auto;
+
+      @include bp-medium {
+        position: initial;
+        padding: 10px 30px;
+      }
     }
 
     &__logo {
@@ -110,9 +115,11 @@ export default {
       background-color: $steel-blue;
 
       @include bp-medium {
-        @include flexbox;
+        @include flex-direction(row);
+        @include transform(none);
 
         position: initial;
+        overflow-y: unset;
         height: auto;
         width: auto;
         margin-top: 0;
@@ -121,6 +128,10 @@ export default {
 
       &--open {
         @include transform(translateX(0));
+
+        @include bp-medium {
+          @include transform(none);
+        }
       }
     }
 

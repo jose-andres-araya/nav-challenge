@@ -154,7 +154,8 @@ export default {
         border-bottom: 1px solid $glacier;
 
         @include bp-medium {
-          margin-right: 20px;
+          margin-right: 30px;
+          border-bottom: none;
         }
       }
 
@@ -162,13 +163,18 @@ export default {
         position: relative;
 
         .nav__sub-items & {
-          margin: 0 0 10px;
+          margin: 0 10px 10px;
         }
       }
 
       &--open {
         background-color: $white;
         color: $steel-blue;
+
+        @include bp-medium {
+          background-color: $transparent;
+          color: $white;
+        }
       }
 
       &--deeper {
@@ -181,12 +187,22 @@ export default {
           padding-left: 15px;
           border-bottom: 2px solid $polo-blue;
           background-color: $glacier;
+
+          @include bp-medium {
+            padding-left: 2px;
+            border-bottom: none;
+            font-size: calculate-rem(16);
+          }
         }
       }
 
       &--title {
         background: $glacier;
         padding: 0 20px 0 15px;
+
+        @include bp-medium {
+          display: none;
+        }
       }
 
       &-title {
@@ -212,6 +228,8 @@ export default {
       }
 
       @include bp-medium {
+        padding: 0;
+
         &::before {
           @include transform(scaleX(0));
           @include transition(all .3s ease-in-out 0s);
@@ -228,6 +246,8 @@ export default {
 
         &:hover,
         &--active {
+          color: $white;
+
           &::before {
             @include transform(scaleX(1));
 
@@ -244,36 +264,49 @@ export default {
         min-height: 62px;
         width: 100%;
         border-bottom: 1px solid $glacier;
+
+        @include bp-medium {
+          @include justify-content(flex-start);
+
+          border-bottom: none;
+        }
       }
 
       &-arrow {
         margin-left: 0;
 
         @include bp-medium {
-          margin-left: 5px;
+          margin: 0 0 2px 10px;
+
+          &-container {
+            background-color: $transparent;
+             cursor: pointer;
+          }
         }
 
-        &-container {
-          background-color: $glacier;
-          padding: 15px 25px 20px;
-          cursor: pointer;
-
-          &--open {
-            background-color: $white;
-
-            .arrow {
-              border-color: $steel-blue;
-            }
-          }
-
-          .nav__item--deeper & {
-            background-color: $steel-blue;
+        @include bp-small {
+          &-container {
+            background-color: $glacier;
+            padding: 15px 25px 20px;
+            cursor: pointer;
 
             &--open {
-              background-color: $steel-blue;
+              background-color: $white;
 
               .arrow {
-                border-color: $white;
+                border-color: $steel-blue;
+              }
+            }
+
+            .nav__item--deeper & {
+              background-color: $steel-blue;
+
+              &--open {
+                background-color: $steel-blue;
+
+                .arrow {
+                  border-color: $white;
+                }
               }
             }
           }
@@ -303,19 +336,26 @@ export default {
       color: $white;
 
       @include bp-medium {
+        @include transform(none);
         @include transition(max-height .3s ease-out);
 
-        position: absolute;
-        top: 35px;
+        top: 55px;
+        left: -10px;
         max-height: 0;
+        height: auto;
+        width: auto;
+        border-left: none;
         overflow: hidden;
+        overflow-y: unset;
       }
 
       &--open {
         @include transform(translateX(0));
 
         @include bp-medium {
-          width: 120px;
+          @include transform(none);
+
+          width: 150px;
           max-height: none;
         }
       }
@@ -330,6 +370,7 @@ export default {
 
         @include bp-medium {
           z-index: 2;
+          background-color: $glacier;
         }
 
         &.nav__sub-items--open {
