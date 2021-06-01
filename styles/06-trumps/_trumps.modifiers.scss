@@ -61,29 +61,3 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
-
-/* Animations */
-.rotate30 {
-  @include transform(rotate(30deg));
-  @include transition(all 100ms ease-out);
-}
-
-.rotate150 {
-  @include transform(rotate(150deg));
-  @include transition(all 100ms ease-out);
-}
-
-.rotate45 {
-  @include transform(rotate(45deg));
-  @include transition(all 100ms ease-out);
-}
-
-.rotate135 {
-  @include transform(rotate(135deg));
-  @include transition(all 100ms ease-out);
-}
-
-.collapse {
-  @include transition(all 70ms ease-out);
-  top: 10px;
-}

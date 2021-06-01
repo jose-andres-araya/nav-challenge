@@ -4,28 +4,20 @@ const defaultState = {
   isMenuOpened: false
 }
 
-const state = () => ({ ...defaultState })
+export const state = () => ({ ...defaultState })
 
-const getters = {
+export const getters = {
   isMenuOpened: state => state.isMenuOpened
 }
 
-const actions = {
+export const actions = {
   toggleMenu(context, isMenuOpened) {
     context.commit("updateToggleMenu", isMenuOpened)
   }
 }
 
-const mutations = {
+export const mutations = {
   updateToggleMenu (state, isMenuOpened) {
     Vue.set(state, 'isMenuOpened', isMenuOpened)
   }
-}
-
-export default {
-  namespaced: true,
-  state,
-  getters,
-  actions,
-  mutations
 }
